@@ -1,2 +1,179 @@
-# AISBOM
-AI Software Bill of Materials for EU AI Act
+# ##############################################################################################
+# AISBOM - AI Software Bill of Materials
+# JSON Spec for Transparency Obligations of the EU AI Act, including LLM / foundation models
+# Version 0.1 (December 10, 2023)
+# ##############################################################################################
+
+ {
+
+# AI Provider Information 
+  "Provider": {
+    "Name": "ACME",
+    “Authorized_Representative”: “If applicable: name with address”
+    "Description": "ACME activity",
+    "URL": "ACME website",
+    "Address": "ACME location",
+    "Country": "ACME country",
+    "Main_Contact": "Main company name and email contact, executive level, for AI topics",
+    "DPO": "Data Protection Officer contact, or similar for non-EU countries",
+    "Applicable_Authorities": {
+      "Local": "Any national or state-level authority related to AI regulation (e.g. AESIA and AEPD in Spain)",
+      "Others": "Any continental or international applicable authority"
+    },
+  },
+
+# AI System/Product Information 
+  "AI_Product_Solution": {
+    "Name": "name of the solution or product that leverages the AI system and where the AI system is embedded",
+    "Description": "detailed description",
+    "Intended_purpose": "detailed description of the use for which the AI system is intended by the provider ", # See definition of "intended purpose" in Article 3 (12)
+    "Focused_Market": "B2C or B2B or internal use", # Applicable to both internal and external apps
+    “Date_Market”: “Date the Product with the embedded AI System is placed on the market or put into service”, # Relevant for the 10-year documentation retention period
+    “Market_MemberStates”: “Name of each Union Member State where the AI System is being placed on the market or put into service (to measure the risk weather there could the case of widespread infringement or widespread infringement with a Union dimension”,
+    "AI_Role": "Specific details of how AI improves the system",
+    "Transparency_Tools": "Specific details of where the AI transparency is made available, such as websites, QR codes for physical devices, technical changelog",
+    "GenerativeAI_Flag": “If applicable: "YES or NOT (The AI System includes any Generative AI piece)", # If it includes Generative AI components, pay attention to Generative_AI_Details
+  },
+
+# AI Model/Solution Information 
+  "AI_Standalone_Solution": {
+    "Name": "name of the AI standalone solution",
+    "Description": "detailed description",
+    "Intended_purpose": "detailed description of the use for which the AI system is intended by the provider",
+    "Focused_Market": "B2C or B2B or internal use",
+     “Date_Market”: “Date the Product with the embedded AI System is placed on the market or put into service”,
+    “Market_MemberStates”: “Name of each Union Member State where the AI System is being placed on the market or put into service (to measure the risk weather there could the case of widespread infringement or widespread infringement with a Union dimension”,
+    "AI_Role": "Specific details of how AI improves the system",
+    "Transparency_Tools": "Specific details of where the AI transparency is made available, such as websites, QR codes for physical devices, technical changelog",
+    "GenerativeAI_Flag": “If applicable: "YES or NOT (The AI System includes any Generative AI piece)",
+  },
+
+# Industry-related Information
+  "Industry": {
+    "Providers_Industry": "name of the provider’s industry or area of work",
+    "AI_Solution_Industry": "name of the intended industry where the AI system is placed on the market",
+    "High_Risk": "to flag if it is part of high risk industries (e.g. toys)",
+    "Other_Regulations": {
+      "Industry_Regulation": "Applicable Industry / Vertical regulation",
+      "Data_Regulation": "Applicable Data Privacy regulation",
+      "Others": "Other international regulations"
+    },
+    "AI_Role": "Specific details of how AI improves the system",
+  },
+
+# AI System Details
+  "AI_System_Details": {
+  
+    "Version": "Version number or code",
+      "Capabilities": "List of the AI's capabilities",
+    "Limitations": "List of the AI's limitations",
+    "Intended_purpose": "detailed description of the intended use of the AI system",
+    "Foreseeable_misuseForbidden_use": "detailed description of the forbidden use(s) of the AI system", # Reasonably foreseeable misuse vs intended purpose, defined in Article 3 (13) mentioned in Article 9 (4) (b) + Article 13 (3) (b) (iv)
+    “Substantial_Modification”: “If applicable: Any Modification or a series of modifications of the AI System after its placing on the market or putting into service”, # Relevant for Article 12 (2) (b), Article 28 (1) (b), ML lifecycle, etc.
+
+    },
+    "Techniques_Used": "List or description of algorithms or techniques used"
+  },
+
+# Dataset details
+“AI_System_Data”: {
+    “Data_Type”: {
+      “Image_Data”: “YES or NO”,
+      “Text_Data”: YES or NO”,
+      “Tabular_Data”: “YES or NO”,
+      “Voice_Data”: “YES or NO”
+    },
+    “Datasets_Used”: {
+      "Training_Dataset": "Description or link to training data",
+      "Validation_Dataset": "Description or link to validation data",
+      "Testing_Dataset": "Description or link to testing data"      
+    },
+    “Training_Dataset_Ownership: {
+      “Owned/Firstparty_Data”: “YES or NO”,
+      “Thirdparty_Data_Proprietary”: “YES or NO”,
+      “Thirdparty_Data_Opensource”: “YES or NO”
+    },
+    "Validation_Dataset_Ownership": {
+      “Owned/Firstparty_Data”: “YES or NO”,
+      “Thirdparty_Data_Proprietary”: “YES or NO”,
+      “Thirdparty_Data_Opensource”: “YES or NO”
+    },
+    "Testing_Dataset_Ownership": {
+      “Owned/Firstparty_Data”: “YES or NO”,
+      “Thirdparty_Data_Proprietary”: “YES or NO”,
+      “Thirdparty_Data_Opensource”: “YES or NO”
+    },
+},
+
+  },
+
+# User Details
+  "User_Interaction": {
+    "Interaction_Type": "e.g. Chatbot, Image Recognition, etc.",
+    “Affected_Persons”: “Any natural person or group of persons who are subject to or otherwise affected by the AI System”, # See for instance Article 3 (8a), Article 10 (3), Article 13 (3) (b) (iv)
+    “Desired_Input_Data”: “Data provided to or directly acquired by the AI System on the basis of which the system produces an output during deployment”; # See legal definition Article 3 (32)
+
+    “Input_Data_DataPrivacy”: {
+      “Non-Personal_Data”: “YES or NO”,
+      “Personal_Data”: “YES or NO”, # Some AI Systems may combine both personal and non-personal data from different sources
+      “Special_Category_Personal_Data: “YES or NO” # e.g. gender, religion, ... see GDPR, different level of consent. More stringent wrt security and processing https://gdpr-info.eu/art-9-gdpr 
+    },
+    "User_Notification": "How users are notified they're interacting with an AI System (Exception if interaction with an AI System is obvious",
+    "Information_Provided_To_Users": "What information users are given about the AI System (stricter rules for emotion recognition or biometric categorisation systems)"
+  },
+
+# Audit logs
+  "Audit_Log": {
+    "Log_Entries": [
+      {
+        "Date_Time": "Timestamp of the interaction",
+        "Input": "Description or snapshot of input received",
+        "Output": "Description or snapshot of output produced"
+      }
+    ]
+  },
+
+# Generative AI-related information (if applicable)
+  "Generative_AI_Details": {
+    "Name": "Name of the Generative AI System",
+    "Version": "Version number or code",
+    "Purpose": "Description of what the Generative AI is intended to do",
+    "Capabilities": "List of the AI's capabilities",
+    "Limitations": "List of the AI's limitations",
+    "Intended_purpose": "detailed description of the intended use of the AI system",
+    "Foreseeable_misuseForbidden_use": "detailed description of the forbidden use(s) of the AI system", # Reasonably foreseeable misuse defined in Article 3 (13) mentioned in Article 9 (4) (b) + Article 13 (3) (b) (iv)
+    “Substantial_Modification”: “If applicable: Any Modification or a series of modifications of the AI System after its placing on the market or putting into service”
+    "Watermarks": "List of the watermarks for AI-generated content",
+    "Countermeasures": "List of the countermeasures to prevent illegal content",
+    "Datasets_Used": {
+      "Owned": "Description or link to training data",
+      "Others_free": "Description or link to validation data",
+      "Others_copyrighted": "Description or link to testing data"
+    },
+    "Techniques_Used": "List or description of algorithms or techniques used"
+  }
+
+# AI Governance Measures
+
+  "Human_Oversight": {
+    "Oversight_Type": "e.g. Periodic review, real-time monitoring, etc.",
+    "Intervention_Mechanism": "How a human can intervene or override the AI"
+  },
+
+  "Bias_Mitigation": {
+    "Mitigation_Strategies_Used": "List or description of strategies used",
+    "Bias_Testing": "Description or results of any bias testing done"
+  },
+
+  "Decommissioning_Protocol": {
+    "Procedure": "Steps to decommission the AI system",
+    "Notification_Mechanism": "How stakeholders are informed"
+  },
+
+  "Emergency_Procedures": {
+    "Procedure_Type": "e.g. For handling deep fakes, misinformation, etc.",
+    "Response_Mechanism": "Steps or mechanisms for rapid response"
+  }
+
+}
+
