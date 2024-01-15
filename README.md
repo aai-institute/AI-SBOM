@@ -18,7 +18,7 @@ Version 0.1 (December 11, 2023)
 
 ## How to cite this work
 
-Adrian XXXXX & appliedAI Institute for Europe gGmbH (2024). AI Bill of Material - Transparency (AI BOM). GitHub. [https://github.com/XXXX](https://github.com/aai-institute/AI-SBOM/discussions)
+Adrián González Sánchez (@AdrianGonzalezSanchez - OdiseIA, HEC Montréal, IE University, Microsoft) & appliedAI Institute for Europe gGmbH (2024). AI Bill of Material - Transparency (AI BOM). GitHub. [https://github.com/XXXX](https://github.com/aai-institute/AI-SBOM/discussions)
 
 ## Overview
 
